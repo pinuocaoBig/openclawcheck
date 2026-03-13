@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="openclaw_linux_check">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/file/openclaw_linux_check.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

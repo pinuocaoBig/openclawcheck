@@ -1,0 +1,44 @@
+{
+  "openclaw_paths": [
+    "/opt/openclaw",
+    "/usr/local/bin/openclaw",
+    "/var/lib/openclaw",
+    "/etc/openclaw",
+    "~/.openclaw"
+  ],
+  "openclaw_ports": [8188, 8080, 3000, 5000, 8888, 6969, 11434],
+  "severity_threshold": "MEDIUM",
+  "ignore_patterns": [
+    "node_modules",
+    "__pycache__",
+    ".git"
+  ],
+  "malicious_skill_patterns": [
+    "token.*leak",
+    "password.*dump",
+    "backdoor",
+    "reverse.*shell",
+    "eval.*exec",
+    "cmd.*execute"
+  ],
+  "report_settings": {
+    "output_dir": "./security_reports",
+    "formats": ["json", "txt", "html"],
+    "include_remediation": true
+  },
+  "remediation_settings": {
+    "auto_fix": false,
+    "backup_before_fix": true,
+    "dry_run": false
+  },
+  "notification": {
+    "enabled": false,
+    "webhook_url": "",
+    "email": {
+      "enabled": false,
+      "smtp_server": "",
+      "from": "",
+      "to": []
+    }
+  }
+}
