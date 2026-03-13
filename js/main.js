@@ -46,14 +46,19 @@ class Navigation {
             }
         });
 
-        // 平滑滚动
+        // 平滑滚动（仅对锚点链接生效）
         $$('.nav-menu a').forEach(link => {
             link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = $(link.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const href = link.getAttribute('href');
+                // 只对以#开头的锚点链接应用平滑滚动
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = $(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
                 }
+                // 外部链接（如about.html、contact.html等）保持默认跳转行为
             });
         });
 
